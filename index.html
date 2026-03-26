@@ -50,9 +50,9 @@
       }
 
       .page {
-        max-width: 900px;
+        max-width: 1100px;
         margin: auto;
-        padding: 167px;
+        padding: 160px;
         perspective: 1200px;
         opacity: 0;
         transition: opacity 0.8s ease;
@@ -69,6 +69,33 @@
       .main {
         flex: 1;
       }
+
+      .tooltip {
+        position: relative;
+        cursor: help;
+      }
+
+      .tooltip::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 125%; /* above the text */
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--bg3);
+        color: var(--text);
+        padding: 6px 10px;
+        border-radius: 4px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.2s;
+        font-size: 12px;
+        z-index: 10;
+      }
+
+      .tooltip:hover::after {
+        opacity: 1;
+      }     
 
       .tabs {
         display: flex;
@@ -97,6 +124,8 @@
         font-family: "Bebas Neue";
         font-size: 2.5rem;
         color: white;
+        text-align: center;
+        padding: 50px;
       }
       .header-right {
         background: var(--bg2);
@@ -204,9 +233,9 @@
                 <div class="site-title">MY PORTFOLIO</div>
               </div>
               <div class="header-right">
-               <p>fullstack scripter</p>
-               <p>very cool</p>
-               <p>goat</p>
+               <p>i am a 15 year old highschool student working to afford my everyday living expenses!</p>
+               <p>+ i am very cool</p>
+               <p>i am very open to commissions, i am not for hire at the moment, but hit me up and i'll negotiate hiring with you!</p>
               </div>
             </div>
 
@@ -216,8 +245,7 @@
                 <div class="pname">DISSOCIATIVE PROGRAMMER AKA. DP</div>
                 <div style="color: var(--textdim)">7+ years of experience</div>
                 <div>
-                  <span class="badge">FRONTEND</span>
-                  <span class="badge">BACKEND</span>
+                  <span class="badge">FULL STACK</span>
                   <span class="badge">NOT FOR HIRE</span>
                 </div>
               </div>
@@ -232,6 +260,7 @@
                 <p>* dm for commissions and further information</p>
                 <p>* if you're going to pay with robux, it must be in devex equivalent</p>
                 <p>* i don't do %, UNLESS i see massive potential in the game</p>
+                <p>* i don't script ui</p>
               </div>
             </div>
           </div>
@@ -259,24 +288,25 @@
           <!-- PRICING -->
           <div id="pricing" class="tab-content" style="display: none">
             <div class="banner">USD PRICES</div>
+            <div class="footer">HINT: HOVER YOUR MOUSE OVER THE DIFFICULTY OF WORK TO SEE EXAMPLES</div>
 
             <div class="grid">
               <div class="section">
                 <div class="sec-title">FRONTEND</div>
                 <div class="prow">
-                  <span>LIGHT WORK</span
+                  <span class="tooltip" data-tooltip="simple frontend, like small abilities, minor visuals, basic events">LIGHT WORK</span
                   ><span style="color: var(--accent)">5 - 20$</span>
                 </div>
                 <div class="prow">
-                  <span>MEDIUM WORK</span
+                  <span class="tooltip" data-tooltip="medium frontend, like abilities with multiple effects.">MEDIUM WORK</span
                   ><span style="color: var(--accent)">35 - 60$</span>
                 </div>
                 <div class="prow">
-                  <span>HARD WORK</span
+                  <span class="tooltip" data-tooltip="hard frontend, like complex abilities, tons of animations, multiple parts.">HARD WORK</span
                   ><span style="color: var(--accent)">65 - 80$</span>
                 </div>
                 <div class="prow">
-                  <span>COMPLEX WORK</span
+                  <span class="tooltip" data-tooltip="complex frontend, self-explainable.">COMPLEX WORK</span
                   ><span style="color: var(--accent)">80 - 200$</span>
                 </div>
               </div>
@@ -284,19 +314,19 @@
               <div class="section">
                 <div class="sec-title">BACKEND</div>
                 <div class="prow">
-                  <span>LIGHT WORK</span
+                  <span class="tooltip" data-tooltip="simple backend, stuff like data systems.">LIGHT WORK</span
                   ><span style="color: var(--accent)">25 - 40$</span>
                 </div>
                 <div class="prow">
-                  <span>MEDIUM WORK</span
+                  <span class="tooltip" data-tooltip="medium backend, stuff like inventory systems.">MEDIUM WORK</span
                   ><span style="color: var(--accent)">40$ - 60$</span>
                 </div>
                 <div class="prow">
-                  <span>HARD WORK</span
+                  <span class="tooltip" data-tooltip="hard backend, like advanced game mechanics, ability or combat systems, optimizations.">HARD WORK</span
                   ><span style="color: var(--accent)">100$ - 200$</span>
                 </div>
                 <div class="prow">
-                  <span>COMPLEX WORK</span
+                  <span class="tooltip" data-tooltip="complex backend, stuff like full on frameworks, custom frameworks, etc.">COMPLEX WORK</span
                   ><span style="color: var(--accent)">200$ and above</span>
                 </div>
               </div>
